@@ -1,10 +1,12 @@
 # Users API
 
 ## User Schema
+<pre>
 id: String (Required) (Unique)
 name: String
 Info: Object
-(Note: More fields can be added if required)
+</pre>
+Note: More fields can be added if required
 
 ## API Calls
 
