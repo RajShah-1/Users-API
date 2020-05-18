@@ -48,6 +48,10 @@ userRouter.put('/:id', async (req, res, next) => {
 userRouter.delete('/:id', async (req, res, next) => {
     try{
         const userID = req.params.id;
+        const user = await User.findOne({id: userID});
+        if(!user){
+            return res.sendStatus(404);
+        }
         await User.findOneAndRemove({id: userID});
         res.sendStatus(204);
     } catch(e){
