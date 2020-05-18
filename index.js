@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const userRouter = require('./Router/userRouter');
 const middleware = require('./utils/middleware');
-const DATABASE_URL = 'mongodb+srv://raj:mypassword@cluster0-gifz4.mongodb.net/test?retryWrites=true&w=majority' || 'mongodb://localhost/user_data';
+const DATABASE_URL = process.env.MONGODB_URL || 'mongodb://localhost/user_data';
 const PORT = process.env.PORT || 3000;
 
 mongoose.connect(DATABASE_URL, {
